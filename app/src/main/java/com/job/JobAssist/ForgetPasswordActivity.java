@@ -1,4 +1,4 @@
-package com.job.JobAssist;
+    package com.job.JobAssist;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;

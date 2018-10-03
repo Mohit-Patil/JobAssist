@@ -23,7 +23,7 @@
         <activity android:name=".SignUpActivity" />
         <activity
             android:name=".ProfileActivity"
-            android:label="JobPool"
+            android:label="JobAssist"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="stateHidden" />
         <activity android:name=".ForgetPasswordActivity" />
@@ -33,7 +33,6 @@
         <activity android:name=".ShowProfile" />
         <activity android:name=".ApplyJob" />
         <activity android:name=".AppliedJob" />
-        <activity android:name=".ShowVideoCv"></activity>
     </application>
 
 </manifest>

@@ -94,7 +94,6 @@ public class ApplyJob extends AppCompatActivity {
 
                             FirebaseUser user = mAuth.getCurrentUser();
                             String ug = dataSnapshot.child("Users").child(user.getUid()).child("ugcourse").getValue(String.class);
-                            String pg = dataSnapshot.child("Users").child(user.getUid()).child("pgcourse").getValue(String.class);
                             String exp = dataSnapshot.child("Users").child(user.getUid()).child("workexp").getValue(String.class);
                             String reqexp = c_experience.toString();
 
@@ -103,7 +102,7 @@ public class ApplyJob extends AppCompatActivity {
                             int inexp = Integer.parseInt(check_exp);
                             int inreqexp = Integer.parseInt(check_reqexp);
 
-                            String qual = ug + "," + pg;
+                            String qual = ug ;
                             String requal = c_jobqualification.toString();
 
                             if (qual.equalsIgnoreCase(requal) && inexp >= inreqexp) {

@@ -52,8 +52,6 @@ FirebaseAuth mAuth;
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile_activity);
-
-        //TextView email=(TextView)findViewById(R.id.profileemail);
         mAuth= FirebaseAuth.getInstance();
         FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
         checkRef=FirebaseDatabase.getInstance().getReference("Users"+"/"+user.getUid()+"/");

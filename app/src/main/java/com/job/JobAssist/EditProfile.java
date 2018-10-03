@@ -33,12 +33,10 @@ import java.util.Calendar;
 
 public class EditProfile extends AppCompatActivity implements View.OnClickListener{
 
-    final static int PICK_PDF_CODE=2342;
-    final static int PICK_VIDEO_CODE=2340;
 
     EditText u_city,u_name,u_address,u_pincode
             ,u_xmarks,u_xiimarks
-            ,u_ugmarks,u_pgmarks
+            ,u_ugmarks
             ,u_skills,u_achievements,u_certifications,u_workexp;
 
     ImageView date;
@@ -48,11 +46,10 @@ public class EditProfile extends AppCompatActivity implements View.OnClickListen
     RadioGroup u_radioGroup;
     RadioButton male,female;
 
-    Spinner ugspinner,pgspinner,xspinner,xiispinner,ug_yearspinner,pg_yearspinner,workexp_spinner;
+    Spinner ugspinner,xspinner,xiispinner,ug_yearspinner,workexp_spinner;
 
-    String[] uglist={"BCA","BCom","BBA","BTech"};
+    String[] uglist={"BCA","BCom","BBA","B.E/B.Tech"};
     String[] exp={"0 Years","1 Years","2 Years","3 Years","4 Years","5 Years",};
-    String[] pglist={"NO","MCA","MCom","MBA","MTech"};
     String[] yearlist={"2000","2001","2002","2003"
             ,"2004","2005","2006","2007","2008"
             ,"2009","2010","2011","2012","2013","2014","2015","2016","2017","2018"};
@@ -111,8 +108,6 @@ public class EditProfile extends AppCompatActivity implements View.OnClickListen
         ArrayAdapter<String> ug=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,uglist);
         ugspinner.setAdapter(ug);
 
-        ArrayAdapter<String> pg=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,pglist);
-
         ArrayAdapter<String> xyear=new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,yearlist);
         xspinner.setAdapter(xyear);
 
@@ -121,8 +116,6 @@ public class EditProfile extends AppCompatActivity implements View.OnClickListen
 
         ArrayAdapter<String> ugyear=new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,yearlist);
         ug_yearspinner.setAdapter(ugyear);
-
-        ArrayAdapter<String> pgyear=new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,yearlist);
 
 
         ArrayAdapter<String> workexp=new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,exp);

@@ -21,8 +21,7 @@ public class ShowProfile extends AppCompatActivity {
 
     TextView tv_name,tv_sex, tv_city,tv_address,
             tv_pincode,tv_10marks,tv_10year,tv_12marks,
-            tv_12year,tv_ugmarks,tv_ugyear,tv_ugcourse,
-            tv_pgmarks,tv_pgyear,tv_pgcourse,tv_skills,
+            tv_12year,tv_ugmarks,tv_ugyear,tv_ugcourse,tv_skills,
             tv_achievement,tv_certification,tv_workexp
             ,tv_dob;
 
@@ -51,9 +50,9 @@ public class ShowProfile extends AppCompatActivity {
         tv_10year=(TextView)findViewById(R.id.tv_10year);
         tv_12marks=(TextView)findViewById(R.id.tv_12marks);
         tv_12year=(TextView)findViewById(R.id.tv_12year);
-        tv_ugcourse=(TextView)findViewById(R.id.tv_ugcourse);
         tv_ugmarks=(TextView)findViewById(R.id.tv_ugmarks);
         tv_ugyear=(TextView)findViewById(R.id.tv_ugyear);
+        tv_ugcourse=(TextView)findViewById(R.id.tv_ugcourse);
         tv_skills=(TextView)findViewById(R.id.tv_skills);
         tv_achievement=(TextView)findViewById(R.id.tv_achievement);
         tv_certification=(TextView)findViewById(R.id.tv_certification);
@@ -77,9 +76,6 @@ public class ShowProfile extends AppCompatActivity {
                 String ugmarks=dataSnapshot.child("ugmarks").getValue(String.class);
                 String ugyear=dataSnapshot.child("ugyear").getValue(String.class);
                 String ugcourse=dataSnapshot.child("ugcourse").getValue(String.class);
-                String pgmarks=dataSnapshot.child("pgmarks").getValue(String.class);
-                String pgyear=dataSnapshot.child("pgyear").getValue(String.class);
-                String pgcourse=dataSnapshot.child("pgcourse").getValue(String.class);
                 String skills=dataSnapshot.child("skills").getValue(String.class);
                 String achievements=dataSnapshot.child("achievements").getValue(String.class);
                 String certification=dataSnapshot.child("certifications").getValue(String.class);
