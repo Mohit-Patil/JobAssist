@@ -16,6 +16,10 @@
             android:id="@+id/nav_appliedjob"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Applied Jobs" />
+        <item
+            android:id="@+id/nav_aboutus"
+            android:icon="@drawable/ic_person_outline_black_24dp"
+            android:title="About Us" />
 
 
     </group>

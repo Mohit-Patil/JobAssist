@@ -400,6 +400,8 @@ FirebaseAuth mAuth;
             startActivity(new Intent(this,ShowProfile.class));
         } else if (id == R.id.nav_appliedjob) {
             startActivity(new Intent(ProfileActivity.this,AppliedJob.class));
+        } else if (id == R.id.nav_aboutus) {
+            startActivity(new Intent(ProfileActivity.this, AboutUs.class));
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
