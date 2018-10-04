@@ -26,7 +26,6 @@ public class ShowProfile extends AppCompatActivity {
             ,tv_dob;
 
     FirebaseAuth mAuth;
-    Button downloadcv,showvideo;
 
     DatabaseReference databaseReference;
 

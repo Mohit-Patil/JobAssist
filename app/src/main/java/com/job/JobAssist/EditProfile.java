@@ -40,8 +40,8 @@ public class EditProfile extends AppCompatActivity implements View.OnClickListen
             ,u_skills,u_achievements,u_certifications,u_workexp;
 
     ImageView date;
-    TextView textViewStatus,videotextViewStatus,u_dob;
-    ProgressBar progressBar,videoprogressBar;
+    TextView textViewStatus,u_dob;
+    ProgressBar progressBar;
 
     RadioGroup u_radioGroup;
     RadioButton male,female;
