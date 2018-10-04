@@ -1,7 +1,6 @@
 package com.job.JobAssist;
 
 import android.content.Intent;
-import android.nfc.Tag;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,12 +14,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -35,8 +29,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         emailid=(EditText)findViewById(R.id.et_signin_id);
         pwd=(EditText)findViewById(R.id.et_signin_pwd);
         mAuth= FirebaseAuth.getInstance();
-        findViewById(R.id.tv_signin).setOnClickListener(this);
+        findViewById(R.id.tv_signup).setOnClickListener(this);
         findViewById(R.id.btn_signin).setOnClickListener(this);
+        findViewById(R.id.tv_forgot).setOnClickListener(this);
+        findViewById(R.id.tv_admin).setOnClickListener(this);
 
 
 
@@ -92,15 +88,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.tv_signin:
+            case R.id.tv_signup:
                 startActivity(new Intent(this,SignUpActivity.class));
                 break;
 
             case R.id.btn_signin:
                 userLogin();
                 break;
-
-
+            case R.id.tv_forgot:
+                startActivity(new Intent(this,ForgetPasswordActivity.class));
+                break;
+            case R.id.tv_admin:
+                startActivity(new Intent(this,AdminActivity.class));
+                break;
 
         }
 
