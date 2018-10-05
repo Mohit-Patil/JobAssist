@@ -1,7 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary">
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="49dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/about_us"
+        android:textColor="@android:color/background_light"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="128dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/follow_twitter"
+        android:textColor="@android:color/background_light"
+        android:textSize="20sp"
+        android:textStyle="bold|italic" />
+
+    <TextView
+        android:id="@+id/mohit_twitter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="59dp"
+        android:layout_marginTop="237dp"
+        android:text="@string/mohit_twitter"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/pranay_twitter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/mohit_twitter"
+        android:layout_marginEnd="50dp"
+        android:text="@string/pranay_twitter"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/raut_twitter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/mohit_twitter"
+        android:layout_marginBottom="201dp"
+        android:text="@string/raut_twitter"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/hrishi_twitter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/pranay_twitter"
+        android:layout_alignTop="@+id/raut_twitter"
+        android:text="@string/hrishi_twitter"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="20sp" />
+</RelativeLayout>
