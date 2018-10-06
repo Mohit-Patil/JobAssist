@@ -1,8 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary">
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="33dp"
+        android:layout_height="29dp"
+        android:layout_alignTop="@+id/raut_twitter"
+        android:layout_marginEnd="-50dp"
+        android:layout_toStartOf="@+id/mohit_twitter"
+        app:srcCompat="@drawable/twitter"
+        android:contentDescription="@string/todo" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="33dp"
+        android:layout_height="29dp"
+        android:layout_alignTop="@+id/raut_twitter"
+        android:layout_toStartOf="@+id/pranay_twitter"
+        app:srcCompat="@drawable/twitter"
+        android:contentDescription="@string/todo" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="33dp"
+        android:layout_height="29dp"
+        android:layout_alignTop="@+id/mohit_twitter"
+        android:layout_toStartOf="@+id/pranay_twitter"
+        app:srcCompat="@drawable/twitter"
+        android:contentDescription="@string/todo" />
 
     <TextView
         android:id="@+id/textView3"
@@ -35,8 +64,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="59dp"
-        android:layout_marginTop="237dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="241dp"
         android:text="@string/mohit_twitter"
         android:textColor="@android:color/darker_gray"
         android:textSize="20sp" />
@@ -45,9 +74,8 @@
         android:id="@+id/pranay_twitter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
+        android:layout_alignEnd="@+id/hrishi_twitter"
         android:layout_alignTop="@+id/mohit_twitter"
-        android:layout_marginEnd="50dp"
         android:text="@string/pranay_twitter"
         android:textColor="@android:color/darker_gray"
         android:textSize="20sp" />
@@ -58,7 +86,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/mohit_twitter"
-        android:layout_marginBottom="201dp"
+        android:layout_marginBottom="207dp"
         android:text="@string/raut_twitter"
         android:textColor="@android:color/darker_gray"
         android:textSize="20sp" />
@@ -67,9 +95,30 @@
         android:id="@+id/hrishi_twitter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/pranay_twitter"
+        android:layout_alignParentEnd="true"
         android:layout_alignTop="@+id/raut_twitter"
+        android:layout_marginEnd="31dp"
         android:text="@string/hrishi_twitter"
         android:textColor="@android:color/darker_gray"
         android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="65dp"
+        android:layout_height="57dp"
+        android:layout_alignEnd="@+id/pranay_twitter"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="114dp"
+        app:srcCompat="@drawable/twitter"
+        android:contentDescription="@string/todo" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="33dp"
+        android:layout_height="29dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/mohit_twitter"
+        android:layout_marginStart="15dp"
+        app:srcCompat="@drawable/twitter"
+        android:contentDescription="@string/todo" />
 </RelativeLayout>
