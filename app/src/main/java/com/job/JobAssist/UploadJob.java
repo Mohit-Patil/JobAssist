@@ -95,7 +95,7 @@ TextView jobdate;
 
                 String name=u_cname.getText().toString().trim();
                 String jobid=u_jobid.getText().toString().trim();
-                String location=u_location.getText().toString().trim();
+                String location=u_location.getText().toString().trim().toUpperCase();
                 String jobdescription=u_jobdesc.getText().toString().trim();
                 String experience=expspinner.getSelectedItem().toString().trim();
                 String jobtype=jobtypespinner.getSelectedItem().toString().trim();
