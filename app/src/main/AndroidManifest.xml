@@ -36,6 +36,9 @@
         <activity android:name=".AboutUs"/>
         <activity android:name=".AdminActivity"/>
         <activity android:name=".AdminMain"/>
+        <activity android:name=".AppliedCandidates"/>
+        <activity android:name=".PostedJob"/>
+        <activity android:name=".UploadJob"/>
     </application>
 
 </manifest>

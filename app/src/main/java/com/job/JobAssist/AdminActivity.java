@@ -2,64 +2,97 @@ package com.job.JobAssist;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class AdminActivity extends AppCompatActivity implements View.OnClickListener{
-    EditText adminemailid,adminpwd;
 
-
-
+    FirebaseAuth mAuth;
+    EditText emailid,pwd;
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
-        adminemailid=(EditText)findViewById(R.id.admin_email);
-        adminpwd=(EditText)findViewById(R.id.admin_password);
+
+        emailid=(EditText)findViewById(R.id.admin_email);
+        pwd=(EditText)findViewById(R.id.admin_password);
+        mAuth= FirebaseAuth.getInstance();
         findViewById(R.id.btn_signin_admin).setOnClickListener(this);
 
-
-
-
-
+        FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
+        if (user!=null){
+            Intent i= new Intent(this,ProfileActivity.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(i);
+        }
     }
-    private void AdminLogin(){
-        String email = adminemailid.getText().toString().trim();
-        String password = adminpwd.getText().toString().trim();
+
+
+    private void userLogin(){
+
+
+        String email = emailid.getText().toString().trim();
+        String password = pwd.getText().toString().trim();
 
 
         if (email.isEmpty()){
-            adminemailid.setError("Email is required");
-            adminemailid.requestFocus();
+            emailid.setError("Email is required");
+            emailid.requestFocus();
             return;
         }
 
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            adminemailid.setError("Please enter valid email");
-            adminemailid.requestFocus();
+            emailid.setError("Please enter valid email");
+            emailid.requestFocus();
             return;
         }
 
         if (password.isEmpty()){
-            adminpwd.setError("Password is required");
-            adminpwd.requestFocus();
+            pwd.setError("Password is required");
+            pwd.requestFocus();
             return;
         }
-        if(email.equals("admin@gmail.com") && password.equals("admin")){
-            Intent intent=new Intent(this,AdminMain.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(intent);
-        }else{
-            Toast.makeText(this,"Wrong email or password",Toast.LENGTH_SHORT).show();
-        }
+
+        mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    Toast.makeText(AdminActivity.this, "Loggin In.........", Toast.LENGTH_SHORT).show();
+                    emailid.setText("");
+                    pwd.setText("");
+                    Intent intent=new Intent(AdminActivity.this,AdminMain.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                }else {
+                    Toast.makeText(AdminActivity.this,task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
     }
+
+
+    @Override
     public void onClick(View v) {
-        switch (v.getId()) {
+        switch (v.getId()){
+
             case R.id.btn_signin_admin:
-                AdminLogin();
+                userLogin();
                 break;
+
+
         }
+
     }
 }
+

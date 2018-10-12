@@ -254,6 +254,7 @@ FirebaseAuth mAuth;
             location=itemView.findViewById(R.id.tv_location);
             jobtype=itemView.findViewById(R.id.tv_jobtype);
 
+
         }
     }
 
@@ -332,24 +333,6 @@ FirebaseAuth mAuth;
             adapter.notifyDataSetChanged();
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

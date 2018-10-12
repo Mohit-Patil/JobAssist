@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+
     >
 
 
@@ -18,7 +19,8 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            >
 
             <View
                 android:layout_width="match_parent"
@@ -85,11 +87,91 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Job Qualification: "
+                android:textColor="#050505"
+                android:textSize="15sp"/>
+            <TextView
+                android:id="@+id/tv_qualification"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+
+
+
+
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date: "
+                android:textColor="#050505"
+                android:textSize="15sp"/>
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Skills: "
+                android:textColor="#050505"
+                android:textSize="15sp"/>
+            <TextView
+                android:id="@+id/tv_skills"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Salary: "
+                android:textColor="#050505"
+                android:textSize="15sp"/>
+            <TextView
+                android:id="@+id/tv_salary"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Experience: "
+                android:textColor="#050505"
+                android:textSize="15sp"/>
+            <TextView
+                android:id="@+id/tv_experience"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="10dp"
                 android:background="#9fe915"/>
+
+            <Button
+                android:id="@+id/deljob"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DELETE JOB"
+                android:textColor="#fff"
+                android:background="@color/colorPrimary"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="#9fe915"/>
+
+
 
 
         </LinearLayout>
