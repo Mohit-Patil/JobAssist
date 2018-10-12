@@ -33,7 +33,7 @@ import java.util.Calendar;
 
 public class EditProfile extends AppCompatActivity implements View.OnClickListener{
 
-
+    int year1,xyear1,xiiyear1,ugyear1;
     EditText u_city,u_name,u_address,u_pincode
             ,u_xmarks,u_xiimarks
             ,u_ugmarks
@@ -53,9 +53,6 @@ public class EditProfile extends AppCompatActivity implements View.OnClickListen
     String[] yearlist={"2000","2001","2002","2003"
             ,"2004","2005","2006","2007","2008"
             ,"2009","2010","2011","2012","2013","2014","2015","2016","2017","2018"};
-
-
-
     FirebaseAuth mAuth;
 
     StorageReference mStorageReference;
@@ -133,11 +130,14 @@ public class EditProfile extends AppCompatActivity implements View.OnClickListen
                 int month=calendar.get(Calendar.MONTH);
                 int day=calendar.get(Calendar.DAY_OF_MONTH);
 
+
+
                 DatePickerDialog dialog=new DatePickerDialog(EditProfile.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                         String date=dayOfMonth+"/"+(month+1)+"/"+year;
                         u_dob.setText(date);
+                        year1 = year;
 
                     }
                 },year,month,day);
@@ -174,6 +174,9 @@ public class EditProfile extends AppCompatActivity implements View.OnClickListen
         String workexp =workexp_spinner.getSelectedItem().toString();
         String email = user.getEmail();
         String dob=u_dob.getText().toString();
+        xyear1 = Integer.parseInt(xyear);
+        xiiyear1 = Integer.parseInt(xiiyear);
+        ugyear1 = Integer.parseInt(ugyear);
 
         if (name.isEmpty()){
             u_name.setError("Name Required");
@@ -248,9 +251,14 @@ public class EditProfile extends AppCompatActivity implements View.OnClickListen
         switch (v.getId()){
 
             case R.id.btn_saveprofile:
-                SaveProfile();
-                Intent i=new Intent(EditProfile.this,ProfileActivity.class);
-                startActivity(i);
+                if((2018 - year1) < 18) {
+                    Toast.makeText(EditProfile.this, "Age less than 18", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    SaveProfile();
+                    Intent i = new Intent(EditProfile.this, ProfileActivity.class);
+                    startActivity(i);
+                }
 
 
         }

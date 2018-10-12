@@ -16,7 +16,6 @@ public class CandidateProfile extends AppCompatActivity {
             tv_pgmarks,tv_pgyear,tv_pgcourse,tv_skills,
             tv_achievement,tv_certification,tv_workexp
             ,tv_dob,tv_email;
-    Button downloadcv,showvideocv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,8 +41,6 @@ public class CandidateProfile extends AppCompatActivity {
         tv_certification=(TextView)findViewById(R.id.tv_certification);
         tv_workexp=(TextView)findViewById(R.id.tv_workexp);
         tv_dob=(TextView)findViewById(R.id.tv_dob);
-        downloadcv=(Button)findViewById(R.id.btn_downcv);
-        showvideocv=(Button)findViewById(R.id.btn_showvideocv);
 
         String name=getIntent().getExtras().getString("name");
         String sex=getIntent().getExtras().getString("sex");
@@ -57,9 +54,6 @@ public class CandidateProfile extends AppCompatActivity {
         String ugmarks=getIntent().getExtras().getString("ugmarks");
         String ugyear=getIntent().getExtras().getString("ugyear");
         String ugcourse=getIntent().getExtras().getString("ugcourse");
-        String pgmarks=getIntent().getExtras().getString("pgmarks");
-        String pgyear=getIntent().getExtras().getString("pgyear");
-        String pgcourse=getIntent().getExtras().getString("pgcourse");
         String skills=getIntent().getExtras().getString("skills");
         String achievements=getIntent().getExtras().getString("achievements");
         String certification=getIntent().getExtras().getString("certifications");
@@ -83,9 +77,6 @@ public class CandidateProfile extends AppCompatActivity {
         tv_ugcourse.setText(ugcourse);
         tv_ugmarks.setText(ugmarks);
         tv_ugyear.setText(ugyear);
-        tv_pgcourse.setText(pgcourse);
-        tv_pgmarks.setText(pgmarks);
-        tv_pgyear.setText(pgyear);
         tv_skills.setText(skills);
         tv_achievement.setText(achievements);
         tv_certification.setText(certification);

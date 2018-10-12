@@ -109,8 +109,6 @@ public class AppliedCandidates extends AppCompatActivity {
             skills=itemView.findViewById(R.id.tv_skills);
         
             workexp=itemView.findViewById(R.id.tv_workexp);
-            downcv=itemView.findViewById(R.id.btn_downcv);
-            downvideocv =itemView.findViewById(R.id.btn_showvideocv);
 
 
         }
