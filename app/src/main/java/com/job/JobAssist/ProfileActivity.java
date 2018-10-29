@@ -52,7 +52,7 @@ FirebaseAuth mAuth;
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile_activity);
-        Toast.makeText(ProfileActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+        Toast.makeText(ProfileActivity.this, "Please Wait...", Toast.LENGTH_SHORT).show();
         mAuth= FirebaseAuth.getInstance();
         FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
         checkRef=FirebaseDatabase.getInstance().getReference("Users"+"/"+user.getUid()+"/");

@@ -177,6 +177,13 @@ public class EditProfile extends AppCompatActivity implements View.OnClickListen
         xyear1 = Integer.parseInt(xyear);
         xiiyear1 = Integer.parseInt(xiiyear);
         ugyear1 = Integer.parseInt(ugyear);
+        int tenyeardiff = xyear1 - year1;
+        int twelveyeardiff = xiiyear1 - xyear1;
+        int ugyeardiff = ugyear1 - xiiyear1;
+        //System.out.println(tenyeardiff);
+        //System.out.println(twelveyeardiff);
+        //System.out.println(ugyeardiff);
+
 
         if (name.isEmpty()){
             u_name.setError("Name Required");
@@ -215,6 +222,18 @@ public class EditProfile extends AppCompatActivity implements View.OnClickListen
             u_ugmarks.requestFocus();
             return;
         }
+        if(tenyeardiff<14){
+            Toast.makeText(EditProfile.this, "Passing Year of Tenth should be more than 14 years from DOB", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if(twelveyeardiff<2){
+            Toast.makeText(EditProfile.this, "Passing Year of Twelfth should be more than 2 years from passing year of 10th", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if(ugyeardiff<3){
+            Toast.makeText(EditProfile.this, "Passing Year of UG should be more than 3 years from passing year of 12th", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
 
 
@@ -241,9 +260,11 @@ public class EditProfile extends AppCompatActivity implements View.OnClickListen
                 ,skills,achievements,certifications,workexp,sex,ugcourse,email,dob);
 
 
-        databaseReference.child("Users").child(user.getUid()).setValue(sp);
-        Toast.makeText(EditProfile.this, "success", Toast.LENGTH_SHORT).show();
 
+        databaseReference.child("Users").child(user.getUid()).setValue(sp);
+        Toast.makeText(EditProfile.this, "Edit Successful", Toast.LENGTH_SHORT).show();
+        Intent i = new Intent(EditProfile.this, ProfileActivity.class);
+        startActivity(i);
     }
 
     @Override
@@ -251,13 +272,14 @@ public class EditProfile extends AppCompatActivity implements View.OnClickListen
         switch (v.getId()){
 
             case R.id.btn_saveprofile:
+
                 if((2018 - year1) < 18) {
                     Toast.makeText(EditProfile.this, "Age less than 18", Toast.LENGTH_SHORT).show();
+                    return;
                 }
                 else{
                     SaveProfile();
-                    Intent i = new Intent(EditProfile.this, ProfileActivity.class);
-                    startActivity(i);
+
                 }
 
 

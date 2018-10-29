@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void userLogin(){
 
 
+
         String email = emailid.getText().toString().trim();
         String password = pwd.getText().toString().trim();
 
@@ -73,6 +74,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     pwd.setText("");
                     Intent intent=new Intent(MainActivity.this,ProfileActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
                     startActivity(intent);
                 }else {
                     Toast.makeText(MainActivity.this,task.getException().getMessage(), Toast.LENGTH_SHORT).show();
