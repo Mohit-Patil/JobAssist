@@ -51,24 +51,16 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
             return;
         }
 
-        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches() || !(email == "admin@gmail.com")){
             emailid.setError("Please enter valid email");
             emailid.requestFocus();
             return;
         }
 
-        if (password.isEmpty()){
+        if (password.isEmpty() || !(password == "admin123")){
             pwd.setError("Password is required");
             pwd.requestFocus();
             return;
-        }
-
-        if(email == "admin@gmail.com" && password == "admin123"){
-            Intent i = new Intent(getApplicationContext(), AdminMain.class);
-            startActivity(i);
-            Toast.makeText(getApplication(), "Welcome Admin", Toast.LENGTH_SHORT).show();
-        }else{
-            Toast.makeText(getApplication(), "Please Wait...",  Toast.LENGTH_SHORT).show();
         }
 
 
