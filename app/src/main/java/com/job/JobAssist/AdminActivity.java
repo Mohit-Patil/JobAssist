@@ -51,13 +51,13 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
             return;
         }
 
-        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches() || !(email == "admin@gmail.com")){
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches() || !(email.equals("admin@gmail.com"))){
             emailid.setError("Please enter valid email");
             emailid.requestFocus();
             return;
         }
 
-        if (password.isEmpty() || !(password == "admin123")){
+        if (password.isEmpty() || !(password.equals("admin123"))){
             pwd.setError("Password is required");
             pwd.requestFocus();
             return;
