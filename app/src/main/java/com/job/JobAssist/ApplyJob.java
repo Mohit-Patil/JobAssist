@@ -1,5 +1,8 @@
 package com.job.JobAssist;
-
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -95,17 +98,28 @@ public class ApplyJob extends AppCompatActivity {
                             FirebaseUser user = mAuth.getCurrentUser();
                             String ug = dataSnapshot.child("Users").child(user.getUid()).child("ugcourse").getValue(String.class);
                             String exp = dataSnapshot.child("Users").child(user.getUid()).child("workexp").getValue(String.class);
+                            String skill = dataSnapshot.child("Users").child(user.getUid()).child("skills").getValue(String.class);
+                            String[] items = skill.split("\n");
+                            ArrayList<String> skilllist = new ArrayList<String>(Arrays.asList(items));
+
                             String reqexp = c_experience.toString();
 
                             String check_exp = exp.replaceAll("[^0-9]", "");
                             String check_reqexp = reqexp.replaceAll("[^0-9]", "");
                             int inexp = Integer.parseInt(check_exp);
                             int inreqexp = Integer.parseInt(check_reqexp);
+                            String reqskills = c_skills.toString();
+                        //System.out.println(reqskills);
+                            String[] reqitems = reqskills.split("\n");
+                            ArrayList<String> reqskilllist = new ArrayList<String>(Arrays.asList(reqitems));
+                            Collections.sort(skilllist);
+                            Collections.sort(reqskilllist);
 
                             String qual = ug ;
                             String requal = c_jobqualification.toString();
-
-                            if (qual.equalsIgnoreCase(requal) && inexp >= inreqexp) {
+                            //System.out.println(skilllist);
+                        //System.out.println(reqskilllist);
+                            if (qual.equalsIgnoreCase(requal) && inexp >= inreqexp && skilllist.equals(reqskilllist)) {
                                 JobList applyjob = new JobList();
 
                                 applyjob.setCompany_name(c_name);
