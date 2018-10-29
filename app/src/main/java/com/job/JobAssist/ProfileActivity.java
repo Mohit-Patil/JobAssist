@@ -144,10 +144,10 @@ FirebaseAuth mAuth;
 
                     joblist.add(data);
 
-                    //if (joblist.size() > 0) {
+                    if (joblist.size() > 0) {
 
                         rcv.setAdapter(adapter);
-                    //}
+                    }
 
 
                 }
