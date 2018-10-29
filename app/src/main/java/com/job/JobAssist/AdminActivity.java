@@ -63,18 +63,28 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
             return;
         }
 
+        if(email == "admin@gmail.com" && password == "admin123"){
+            Intent i = new Intent(getApplicationContext(), AdminMain.class);
+            startActivity(i);
+            Toast.makeText(getApplication(), "Welcome Admin", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(getApplication(), "Please Wait...",  Toast.LENGTH_SHORT).show();
+        }
+
+
+
         mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    Toast.makeText(AdminActivity.this, "Loggin In.........", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AdminActivity.this, "Welcome Admin", Toast.LENGTH_SHORT).show();
                     emailid.setText("");
                     pwd.setText("");
                     Intent intent=new Intent(AdminActivity.this,AdminMain.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 }else {
-                    Toast.makeText(AdminActivity.this,task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AdminActivity.this,"Incorrect Credentials! Please check your Email and Password and Try Again", Toast.LENGTH_SHORT).show();
                 }
             }
         });

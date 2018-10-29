@@ -6,32 +6,14 @@
     android:background="@color/colorPrimary">
 
     <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="33dp"
-        android:layout_height="29dp"
-        android:layout_alignTop="@+id/raut_twitter"
-        android:layout_marginEnd="-50dp"
-        android:layout_toStartOf="@+id/mohit_twitter"
-        app:srcCompat="@drawable/twitter"
-        android:contentDescription="@string/todo" />
-
-    <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="33dp"
-        android:layout_height="29dp"
-        android:layout_alignTop="@+id/raut_twitter"
-        android:layout_toStartOf="@+id/pranay_twitter"
+        android:layout_width="30dp"
+        android:layout_height="33dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/textView4"
+        android:layout_marginEnd="63dp"
         app:srcCompat="@drawable/twitter"
-        android:contentDescription="@string/todo" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="33dp"
-        android:layout_height="29dp"
-        android:layout_alignTop="@+id/mohit_twitter"
-        android:layout_toStartOf="@+id/pranay_twitter"
-        app:srcCompat="@drawable/twitter"
-        android:contentDescription="@string/todo" />
+        android:contentDescription="@string/todo5" />
 
     <TextView
         android:id="@+id/textView3"
@@ -104,21 +86,40 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="65dp"
-        android:layout_height="57dp"
-        android:layout_alignEnd="@+id/pranay_twitter"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="114dp"
+        android:layout_width="30dp"
+        android:layout_height="33dp"
+        android:layout_alignBottom="@+id/mohit_twitter"
+        android:layout_toStartOf="@+id/pranay_twitter"
         app:srcCompat="@drawable/twitter"
-        android:contentDescription="@string/todo" />
+        android:contentDescription="@string/todo4" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="30dp"
+        android:layout_height="33dp"
+        android:layout_alignBottom="@+id/mohit_twitter"
+        android:layout_marginEnd="-50dp"
+        android:layout_toStartOf="@+id/mohit_twitter"
+        app:srcCompat="@drawable/twitter"
+        android:contentDescription="@string/todo3" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="30dp"
+        android:layout_height="33dp"
+        android:layout_alignBottom="@+id/raut_twitter"
+        android:layout_marginEnd="-50dp"
+        android:layout_toStartOf="@+id/mohit_twitter"
+        app:srcCompat="@drawable/twitter"
+        android:contentDescription="@string/todo2" />
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="33dp"
-        android:layout_height="29dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/mohit_twitter"
-        android:layout_marginStart="15dp"
+        android:layout_width="30dp"
+        android:layout_height="33dp"
+        android:layout_alignTop="@+id/raut_twitter"
+        android:layout_toStartOf="@+id/pranay_twitter"
         app:srcCompat="@drawable/twitter"
-        android:contentDescription="@string/todo" />
+        android:contentDescription="@string/todo1" />
+
 </RelativeLayout>

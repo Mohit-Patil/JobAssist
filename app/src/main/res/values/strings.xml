@@ -23,8 +23,13 @@
     </string>
 
     <string name="hrishi_twitter">
-    <a href="https://www.twitter.com/hrishikeshpatil">Hrishikesh Patil</a>
+    <a href="https://www.twitter.com/patilhrishi18">Hrishikesh Patil</a>
     </string>
     <string name="todo">TODO</string>
+    <string name="todo1">TODO</string>
+    <string name="todo2">TODO</string>
+    <string name="todo3">TODO</string>
+    <string name="todo4">TODO</string>
+    <string name="todo5">TODO</string>
 
 </resources>
