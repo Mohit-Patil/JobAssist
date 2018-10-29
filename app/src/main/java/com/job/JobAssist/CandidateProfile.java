@@ -61,8 +61,6 @@ public class CandidateProfile extends AppCompatActivity {
         String dob=getIntent().getExtras().getString("dob");
         String email=getIntent().getExtras().getString("email");
 
-        final String cv=getIntent().getExtras().getString("cv");
-
 
 
         tv_name.setText(name);

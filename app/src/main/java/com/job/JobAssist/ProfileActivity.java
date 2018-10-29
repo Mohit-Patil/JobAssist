@@ -144,10 +144,10 @@ FirebaseAuth mAuth;
 
                     joblist.add(data);
 
-                    if (joblist.size() > 0) {
+                    //if (joblist.size() > 0) {
 
                         rcv.setAdapter(adapter);
-                    }
+                    //}
 
 
                 }
@@ -176,70 +176,6 @@ FirebaseAuth mAuth;
 
 
     }
-
-
-
-    private void filterjob(String text){
-
-        ArrayList<JobList> filteredlist=new ArrayList<>();
-
-        for(JobList item : joblist){
-
-
-
-            if (item.getJobtype().toLowerCase().equalsIgnoreCase(text) ){
-
-                filteredlist.add(item);
-            }
-
-
-
-
-        }
-
-
-
-        adapter.filterlist(filteredlist);
-
-
-
-    }
-
-    private void filter(String text){
-
-        ArrayList<JobList> filteredlist=new ArrayList<>();
-
-        for(JobList item : joblist){
-
-
-
-            if (item.getLocation().toLowerCase().contains(text.toLowerCase()) ){
-
-                filteredlist.add(item);
-            }
-            else if (item.getCompany_name().toLowerCase().contains(text.toLowerCase()) ){
-
-                filteredlist.add(item);
-            }
-            else if (item.getJobdescription().toLowerCase().contains(text.toLowerCase()) ){
-
-                filteredlist.add(item);
-            }
-            else if (item.getJobtype().toLowerCase().contains(text.toLowerCase())){
-                filteredlist.add(item);
-            }
-
-
-        }
-
-
-
-        adapter.filterlist(filteredlist);
-
-
-
-    }
-
     public  class MyViewHolder extends RecyclerView.ViewHolder{
 
         TextView company_name
@@ -326,12 +262,6 @@ FirebaseAuth mAuth;
         @Override
         public int getItemCount() {
             return joblist.size();
-        }
-
-        public void filterlist(ArrayList<JobList> filteredlist){
-
-            joblist =filteredlist;
-            adapter.notifyDataSetChanged();
         }
     }
     @Override
