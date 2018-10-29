@@ -69,8 +69,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-
-                    Toast.makeText(MainActivity.this, "Loggin In.........", Toast.LENGTH_SHORT).show();
                     emailid.setText("");
                     pwd.setText("");
                     Intent intent=new Intent(MainActivity.this,ProfileActivity.class);
@@ -93,6 +91,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.btn_signin:
+                Toast.makeText(MainActivity.this, "Please Wait...", Toast.LENGTH_SHORT).show();
                 userLogin();
                 break;
             case R.id.tv_forgot:
