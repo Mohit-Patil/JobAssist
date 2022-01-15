@@ -18,19 +18,6 @@ jobs:
 
       - name: Setup Android SDK
         uses: android-actions/setup-android@v2
-
-      - name: Setup ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 2.7
-
-      - name: Caching ruby dependencies
-        uses: actions/cache@v2
-        with:
-          path: 'vendor/bundle'
-          key: ${{ runner.os }}-gems-${{ secrets.GEMS_CACHE_VERSION }}-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-gems-
       - name: Caching Gradle packages
         uses: actions/cache@v2
         with:
